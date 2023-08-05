@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS CRUD with Bootstrap Modal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="MainController">
+    <div class="container">
+        <h2>AngularJS CRUD with Bootstrap Modal</h2>
+        <button class="btn btn-primary" ng-click="openModal('add')">Thêm mới</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <button class="btn btn-warning" ng-click="openModal('edit', user)">Chỉnh sửa</button>
+                        <button class="btn btn-danger" ng-click="deleteUser(user)">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ modalTitle }}</h4>
+                </div>
+                <div class="modal-body">
+                    <form ng-submit="submitUser()">
+                        <div class="form-group">
+                            <label for="name">Tên:</label>
+                            <input type="text" class="form-control" ng-model="formData.name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" ng-model="formData.email" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Lưu</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="h.js"></script>
+       
+</body>
+</html>
