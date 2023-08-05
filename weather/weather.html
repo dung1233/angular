@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+<head>
+    <title>Weather App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <div ng-controller="WeatherController">
+        <h1>Weather in {{ cityName }}</h1>
+        <img ng-src="{{ weatherIcon }}" class="weather-icon" alt="Weather Icon">
+        <p><strong>Description:</strong> {{ weatherDescription }}</p>
+        <p><strong>Temperature:</strong> {{ temperature }} °C</p>
+        <p><strong>Date and Time:</strong> {{ formattedDateTime }}</p>
+    </div>
+    
+    
+
+<script src="app.js"></script>
+
+</body>
+</html>

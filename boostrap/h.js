@@ -2,9 +2,35 @@ var app = angular.module("myApp", []);
 
 app.controller("MainController", function ($scope) {
   $scope.users = [
-    { id: 1, name: "Người dùng 1", email: "user1@example.com" },
-    { id: 2, name: "Người dùng 2", email: "user2@example.com" },
-    { id: 3, name: "Người dùng 3", email: "user3@example.com" },
+    {
+      id: 1,
+      name: "Người dùng 1",
+      Date: "user1@example.com",
+      Sale: "10",
+      Category: "AAA",
+      like: "8",
+      image: "hinhanh/7478.png_860.png",
+    },
+    {
+      id: 2,
+      name: "Người dùng 2",
+      Date: "user2@example.com",
+      Sale: "8",
+      like: 0,
+      Category: "idle",
+      image:
+        "hinhanh/999-anh-game-3d-hinh-game-online-dep-nhat-danh-cho-game-thu_2.jpg",
+    },
+    {
+      id: 3,
+      name: "Người dùng 3",
+      Date: "uSer3@example.com",
+      Sale: "7",
+      like: 4,
+      Category: "3D",
+      image:
+        "hinhanh/loat-anh-game-tuyet-dep-tha-ho-lua-chon-de-lam-hinh-nen-dien-thoai-cuc-chat-fb3.jpg",
+    },
   ];
 
   $scope.modalTitle = "Thêm mới người dùng";
