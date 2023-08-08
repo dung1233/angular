@@ -15,15 +15,14 @@
 <body ng-controller="MainController">
     <div class="container">
         <h2>Angular 2 QuickStart</h2>
-        <h3>Current User: Test@Test.com</h3>
+        <h3>Curren User:Test@Test.com</h3>
         <button class="btn btn-primary" ng-click="openModal('add')">Add Product</button>
-      <div class="one1">
-        <table class="table custom-table ">
+        <table class="table">
             <thead>
                 <tr>
                     <th></th>
-                    <th>Product Name</th>
-                    <th>Product Price</th>
+                    <th>Name</th>
+                    <th>Price</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,15 +34,15 @@
                     </td>
                     <td>{{ user.name }}</td>
                     <td>{{ user.Price }}</td>
+
                 </tr>
             </tbody>
         </table>
-
-      </div>
-        
     </div>
 
+
     <div id="myModal" class="modal fade modal-edit" role="dialog">
+
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,7 +59,9 @@
                             <label for="floatnumber">Product Price:</label>
                             <input type="text" class="form-control" ng-model="formData.Price" required>
                         </div>
+
                         <button type="submit" class="btn btn-success">Submit</button>
+
                     </form>
                 </div>
             </div>
