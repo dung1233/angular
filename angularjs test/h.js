@@ -3,32 +3,36 @@ var app = angular.module("myApp", []);
 app.controller("MainController", function ($scope) {
   $scope.users = [
     {
+      id: 1,
       name: "Product One",
       Price: "22.50",
     },
     {
+      id: 2,
       name: "Product Two",
       Price: "15.00",
     },
     {
+      id: 3,
       name: "Product Four",
       Price: "123.82",
     },
     {
+      id: 4,
       name: "Product Five",
       Price: "123.75",
     },
   ];
 
-  $scope.modalTitle = "Edit Product";
+  $scope.modalTitle = "Add Product";
   $scope.formData = {};
 
   $scope.openModal = function (mode, user) {
     if (mode === "add") {
-      $scope.modalTitle = "Edit Product";
+      $scope.modalTitle = "Add Product";
       $scope.formData = {};
     } else if (mode === "edit") {
-      $scope.modalTitle = "Chỉnh sửa người dùng";
+      $scope.modalTitle = "Edit Product";
       $scope.formData = angular.copy(user);
     }
 
