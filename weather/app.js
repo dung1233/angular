@@ -18,9 +18,11 @@ app.controller("WeatherController", function ($scope, $http, $filter) {
       var date = new Date(timestamp);
       $scope.formattedDateTime = $filter("date")(date, "dd/MM/yyyy HH:mm:ss");
 
-      // Xác định biểu tượng thời tiết tương ứng
       var weatherCode = data.weather[0].id;
       $scope.weatherIcon = getWeatherIcon(weatherCode);
+
+      $scope.windSpeed = data.wind.speed;
+      $scope.windDirection = getWindDirection(data.wind.deg);
     })
     .catch(function (error) {
       console.log("Không thể lấy thông tin thời tiết. Lỗi: ", error);
@@ -28,10 +30,26 @@ app.controller("WeatherController", function ($scope, $http, $filter) {
 
   // Hàm xác định biểu tượng thời tiết
   function getWeatherIcon(weatherCode) {
+    // ... (giữ nguyên hàm getWeatherIcon của bạn)
+  }
+
+  // Hàm xác định hướng gió
+  function getWindDirection(degree) {
+    if (degree >= 337.5 || degree < 22.5) return "North";
+    if (degree >= 22.5 && degree < 67.5) return "Northeast";
+    if (degree >= 67.5 && degree < 112.5) return "East";
+    if (degree >= 112.5 && degree < 157.5) return "Southeast";
+    if (degree >= 157.5 && degree < 202.5) return "South";
+    if (degree >= 202.5 && degree < 247.5) return "Southwest";
+    if (degree >= 247.5 && degree < 292.5) return "West";
+    if (degree >= 292.5 && degree < 337.5) return "Northwest";
+    return "Unknown";
+  }
+  function getWeatherIcon(weatherCode) {
     if (weatherCode >= 200 && weatherCode < 300) {
-      return "images/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvc3YxODI3MjgtaW1hZ2Utam9iNjE1XzEucG5n.jfif";
+      return "images/thunderstorm.png";
     } else if (weatherCode >= 300 && weatherCode < 600) {
-      return "images/mua.jpg";
+      return "images/rainy.png";
     } else if (weatherCode >= 600 && weatherCode < 700) {
       return "images/snowy.png";
     } else if (weatherCode >= 700 && weatherCode < 800) {

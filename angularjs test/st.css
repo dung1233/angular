@@ -1,0 +1,22 @@
+button.btn.btn-success {
+    background: white;
+    color: black;
+    border-color: black;
+}
+button.btn.btn-primary {
+    background-color: #2acd3e;
+    border-color: #ffffff;
+}
+button.btn.btn-warning {
+    background-color: #515fc3;
+    border-color: #e1e1e1;
+}
+h3 {
+    background-color: #515fc3;
+    color: white;
+    height: 50px;
+    line-height: 49px;
+    width: 40%;
+    padding-left: 16px;
+    border-radius: 4%;
+}
